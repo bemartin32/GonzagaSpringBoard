@@ -97,14 +97,10 @@ function search(str) {
   return results;
 }
 
-input.addEventListener("input", function () {
+function searchHandler() {
   let userInput = input.value.toLowerCase();
   let results = search(userInput);
   showSuggestions(results);
-});
-
-function searchHandler(e) {
-  fruit;
 }
 
 function showSuggestions(results) {
