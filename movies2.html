@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movies App</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>Movies App</h1>
+
+  <form id="movie-form">
+    <label for="title-input">Title:</label>
+    <input type="text" id="title-input">
+    <label for="rating-input">Rating:</label>
+    <input type="number" id="rating-input" min="1" max="10">
+    <button type="submit">Add Movie</button>
+  </form>
+
+  <div id="movies-container"></div>
+
+  <script>
+    $(document).ready(function() {
+      $('#movie-form').submit(function(event) {
+        event.preventDefault();
+
+        let title = $('#title-input').val();
+        let rating = $('#rating-input').val();
+
+        let movieElement = $('<div class="movie">' +
+        '<h2>' + title + '</h2>' +
+        '<p>Rating: ' + rating + '</p>' +
+        '<button class="remove-btn">Remove</button>' +
+        '</div>');
+
+        $('#movies-container').append(movieElement);
+
+        $('#title-input').val('');
+        $('#rating-input').val('');
+      });
+
+      $(document).on('click', '.remove-btn', function() {
+        $(this).closest('.movie').remove();
+      });
+    });
+  </script>
+</body>
+</html>
