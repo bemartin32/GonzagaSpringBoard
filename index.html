@@ -1,28 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Giphy Party!</title>
-  <link rel="stylesheet"
-        href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jeopardy</title>
+  <link href="https://fonts.googleapis.com/css?family=Copse&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="jeopardy.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 </head>
-
 <body>
-<div class="container">
-  <h1 class="text-center mt-4 mb-4">GIPHY PARTY</h1>
-  <form class="form-inline d-flex justify-content-center mb-4">
-    <input type="text" id="search" name="search"
-           placeholder="Enter a search term" class="form-control mr-2"/>
-    <input type="submit" class="btn btn-secondary" value="Search Giphy!"/>
-    <button id="remove" class="btn btn-danger ml-2">Remove Images</button>
-  </form>
-  <div id="gif-area" class="row">
-  </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.js"></script>
-<script src="app.js"></script>
-</body>
+  <header>
+    <h1>Jeopardy!</h1>
+    <button id="start">Start!</button>
+  </header>
 
+  <div id="spin-container">
+    <i class="fa fa-spin fa-spinner"></i>
+  </div>
+
+  <table id="jeopardy">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
+
+<script src="https://unpkg.com/jquery"></script>
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="https://unpkg.com/lodash"></script>
+<script src="jeopardy.js"></script>
+
+</body>
 </html>
+
+<!-- click to restart text -->
+<!-- change colors for question / answer -->
+<!-- other ways to make it prettier? -->
