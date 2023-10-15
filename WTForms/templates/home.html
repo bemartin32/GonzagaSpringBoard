@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home Page</title>
+</head>
+
+<body>
+  {% for msg in get_flashed_messages()%}
+  <p>
+    {{msg}}
+  </p>
+  {% endfor %}
+
+  <ul>
+    <li><a href="/add">Add New Pet</a></li>
+    <li><a href="/<int:pet-id>">View All Pets</a></li>
+  </ul>
+
+</body>
+
+</html>
